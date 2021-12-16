@@ -8,10 +8,19 @@ class ExampleForm extends Component {
   constructor(props){
     super(props)
     // init state attribute here
+    this.statie = {
+      fullname: "",
+      email: "",
+      password: "",
+    }
   }
 
   handleOnChange = (e) => {
     // setState here
+    this.setState({
+      ...this.state,
+      [e.target.name]: e.target.value
+    })
   }
 
   handleOnSubmit = (e) => {
